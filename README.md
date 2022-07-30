@@ -5,16 +5,16 @@
 ![image](https://user-images.githubusercontent.com/44883301/181871927-9d15dd0a-f3eb-495f-b73b-1332398f19fb.png)
 
 
-NodeJS Integration of Bandcamp and Discord RPC, very similar to how Spotify integrates with Discord.
+NodeJS Integration of Bandcamp and Discord RPC, very similar to how Spotify integrates with Discord.\
 Fork of  [kiawildberger/bandcamp-discord](https://github.com/kiawildberger/bandcamp-discord) 
 
 ## Features:!
 
-🎵 Detects album title, artwork, artist, and song's title;
-⏰ Shows song's elapsed time;
-⚙️ Detects and updates your Rich Presence automatically;
-🌐 Works on collections, album and track pages;
-💙 If you supported the artist, it will show a heart just near the artwork  <3
+🎵 Detects album title, artwork, artist, and song's title;\
+⏰ Shows song's elapsed time;\
+⚙️ Detects and updates your Rich Presence automatically;\
+🌐 Works on collections, album and track pages;\
+💙 If you supported the artist, it will show a heart just near the artwork  <3\
 
 ![image](https://user-images.githubusercontent.com/44883301/181872010-7e3b6eba-4129-4ee5-9853-02c4ee672b22.png)
 
@@ -44,7 +44,7 @@ After that:
 3. (Windows) Run `run.bat` to start the main script;
 3. (Linux) Run `forever main.js` in the code folder;
 
-if this message is shown in the terminal: **"Bandcamp Rich Presence - Hooked!"** that means its ready and the window can be closed.
+if this message is shown in the terminal: **"Bandcamp Rich Presence - Hooked!"** that means its ready and the window can be closed.\
 Play some songs in Bandcamp and it should be working :)
 
 ### Restart/Stop
@@ -59,7 +59,6 @@ The script has been stopped. Start again using:
 4. (Linux) Run `forever main.js` in the code folder.
 
 ## Know issues:
-- It relies on a http://localhost POST signal to trade data between the `userscript` and the `main` script. It may not work if your internet is not configured to receive or can't receive those signals;
-- Sometimes it can take up to 10 seconds to update or flick between the current and last song you were playing; (this is a discord-rpc issue)
-- May crash whenever Discord closes or restarts (see 'Restart/Stop' section on how to restart the script)
-
+- It relies on a http://localhost POST signal to trade data between the `userscript` and the `main` script. It may not work if your internet is not configured to receive or can't receive those signals;\
+- Sometimes it can take up to 10 seconds to update or flick between the current and last song you were playing; (this is a discord-rpc issue)\
+- May crash whenever Discord closes or restarts (see 'Restart/Stop' section on how to restart the script)\
