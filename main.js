@@ -1,39 +1,59 @@
-const discordrpc = require("discord-rpc")
-const clientId = "860389782664118273"
-const rpc = new discordrpc.Client({transport:'ipc'})
-const express = require('express'), app = express();
+const discord = require("discord-rpc");
+const clientId = "1002380451090010202";
+const rpc = new discord.Client({transport:'ipc'});
+const config = require("./config.json")
 
-let elapsed = 0;
+var port = config.receive_port
+var express = require('express');
+var cors = require('cors');
+var app = express();
+let elapsed = -1;
+
+var keyCache
+
+app.use(express.json());
+app.use(
+    cors({
+        origin: "*",
+        allowedHeaders: ['Origin', 'Content-Type']
+    }))
+
+app.listen(port, () => console.log("Bandcamp Rich Presence - Hooked!\nConfigured to port "+port+"\nYou can safely close this window"))
+
+app.post('/', (request, response) => {
+    setActivity(request.body)
+    response.send({code: "Yeah"})
+});
+
+
 setInterval(() => {
-    if(elapsed < 10) { elapsed++ } else {rpc.clearActivity();}
+    if(elapsed < 6 && elapsed >= 0) { elapsed++ } else {elapsed = -1; rpc.clearActivity();}
 }, 1000);
 
-app.use(express.json())
-app.post('/', (request, response) => {
-    elapsed = 0
-    setActivity(request.body)
-    response.send(JSON.stringify({code: "Yeah"}))
-})
-
-app.listen(6969);
-console.log("express server ready")
-
-let artist, song, album;
 function setActivity(data) {
-    if(data.state === "stop" || elapsed > 10) {
+    elapsed = 0
+    if(data.state == "pause") {
         rpc.clearActivity()
         return;
     }
+
+    if(data.key == keyCache) return;
+    rpc.clearActivity();
+    keyCache = data.key
+    console.log(keyCache)
+
+
     rpc.setActivity({
+        name: data.song,
         instance: true,
-        details: `${data.artist} - ${data.song}`,
-        state: "on "+data.album,
-        largeImageKey: "bc-logo",
-        largeImageText: "deez nuts lol",
-        // smallImageKey: data.state,
-        // smallImageText: (data.state === "play") ? "playing" : "paused"
-        // smallImageText: data.state
-    })
-}
+        details: ((data.song).length = 1 ? data.song+" " : data.song),
+        state: data.artist,
+        largeImageKey: data.artwork,
+        largeImageText: data.album,
+        startTimestamp: config.show_elapsed == true ? data.timestamp : null,
+        smallImageKey: config.show_heart && data.owned == true ? "heart" : "bandcamp",
+        smallImageText: config.show_heart && data.owned == true ? "💙 supported "+data.artist+" on bandcamp 💙" : "listening on bandcamp"
+    });
+};
 
 rpc.login({clientId}).catch(console.error)
