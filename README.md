@@ -1,15 +1,22 @@
 # Bandcamp + Discord Rich Presence
 
+
+![image](https://user-images.githubusercontent.com/44883301/181871960-c4de7d71-adac-49ec-9fde-24376479bda3.png)
+![image](https://user-images.githubusercontent.com/44883301/181871927-9d15dd0a-f3eb-495f-b73b-1332398f19fb.png)
+
+
 NodeJS Integration of Bandcamp and Discord RPC, very similar to how Spotify integrates with Discord.
 Fork of  [kiawildberger/bandcamp-discord](https://github.com/kiawildberger/bandcamp-discord) 
 
+## Features:!
 
-## Features:
 🎵 Detects album title, artwork, artist, and song's title;
 ⏰ Shows song's elapsed time;
 ⚙️ Detects and updates your Rich Presence automatically;
 🌐 Works on collections, album and track pages;
 💙 If you supported the artist, it will show a heart just near the artwork  <3
+
+![image](https://user-images.githubusercontent.com/44883301/181872010-7e3b6eba-4129-4ee5-9853-02c4ee672b22.png)
 
 ## Configurations:
 
