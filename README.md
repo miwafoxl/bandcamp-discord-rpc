@@ -14,7 +14,7 @@ Fork of  [kiawildberger/bandcamp-discord](https://github.com/kiawildberger/bandc
 ⏰ Shows song's elapsed time;\
 ⚙️ Detects and updates your Rich Presence automatically;\
 🌐 Works on collections, album and track pages;\
-💙 If you supported the artist, it will show a heart just near the artwork  <3\
+💙 If you supported the artist, it will show a heart just near the artwork  <3
 
 ![image](https://user-images.githubusercontent.com/44883301/181872010-7e3b6eba-4129-4ee5-9853-02c4ee672b22.png)
 
