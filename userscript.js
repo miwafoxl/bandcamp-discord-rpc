@@ -2,7 +2,7 @@
 // @name Bandcamp Rich Presence for Discord
 // @namespace tpanda
 // @version 1a
-// @description add basic keyboard control and changes the tab name to current song
+// @description integrates bandcamp to discord rich presence
 // @match https://bandcamp.com/*
 // @match https://*.bandcamp.com/album/*
 // @match https://*.bandcamp.com/track/*
