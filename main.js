@@ -2,13 +2,11 @@ const discord = require("discord-rpc");
 const clientId = "1002380451090010202";
 const rpc = new discord.Client({transport:'ipc'});
 const config = require("./config.json")
-
 var port = config.receive_port
 var express = require('express');
 var cors = require('cors');
 var app = express();
 let elapsed = -1;
-
 var keyCache
 
 app.use(express.json());
@@ -17,14 +15,11 @@ app.use(
         origin: "*",
         allowedHeaders: ['Origin', 'Content-Type']
     }))
-
 app.listen(port, () => console.log("Bandcamp Rich Presence - Hooked!\nConfigured to port "+port+"\nYou can safely close this window"))
-
 app.post('/', (request, response) => {
     setActivity(request.body)
     response.send({code: "Yeah"})
 });
-
 
 setInterval(() => {
     if(elapsed < 6 && elapsed >= 0) { elapsed++ } else {elapsed = -1; rpc.clearActivity();}
@@ -36,13 +31,10 @@ function setActivity(data) {
         rpc.clearActivity()
         return;
     }
-
     if(data.key == keyCache) return;
     rpc.clearActivity();
     keyCache = data.key
-    console.log(keyCache)
-
-
+    // console.log(keyCache)
     rpc.setActivity({
         name: data.song,
         instance: true,
