@@ -21,7 +21,7 @@ function calculateTimestamp(time) { // this should work fine if the song is not 
     timestampRaw.reverse()
     timestamp = (Number(timestampRaw[0]) + (Number(timestampRaw[1])*60))*1000
     if(timestampRaw[2] !== undefined) {timestamp = timestamp+(((timestampRaw[2]*60)*60)*1000)}
-    console.log("now: "+(Date.now())+"\nplayback array: "+timestampRaw+"\nplayback time: "+timestamp+"\ntimestamp: "+(Date.now()-timestamp)) // debugging
+    // console.log("now: "+(Date.now())+"\nplayback array: "+timestampRaw+"\nplayback time: "+timestamp+"\ntimestamp: "+(Date.now()-timestamp)) // debugging
     return (Date.now() - timestamp);
 }
 
@@ -83,7 +83,7 @@ function calculateTimestamp(time) { // this should work fine if the song is not 
             artist = artist2
             timestamp = calculateTimestamp(player)
             key = Math.random().toString(36).slice(2, 7);
-            console.log("player: "+player+"timestamp: "+timestamp+"\nstatus: "+status+"\nowned: "+owned+"\ntitle: "+song+"\nalbum: "+album+"\nartist: "+artist) // debugging
+            // console.log("player: "+player+"timestamp: "+timestamp+"\nstatus: "+status+"\nowned: "+owned+"\ntitle: "+song+"\nalbum: "+album+"\nartist: "+artist) // debugging
 
             data = {
                 album: album,
