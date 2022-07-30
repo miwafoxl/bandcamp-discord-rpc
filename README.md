@@ -8,17 +8,17 @@
 NodeJS Integration of Bandcamp and Discord RPC, very similar to how Spotify integrates with Discord.\
 Fork of  [kiawildberger/bandcamp-discord](https://github.com/kiawildberger/bandcamp-discord) 
 
-## Features:!
+## Features
 
 🎵 Detects album title, artwork, artist, and song's title;\
 ⏰ Shows song's elapsed time;\
 ⚙️ Detects and updates your Rich Presence automatically;\
 🌐 Works on collections, album and track pages;\
-💙 If you supported the artist, it will show a heart just near the artwork  <3
+💙 If you had supported the artist, it will show a heart just near the artwork  <3
 
 ![image](https://user-images.githubusercontent.com/44883301/181872010-7e3b6eba-4129-4ee5-9853-02c4ee672b22.png)
 
-## Configurations:
+## Configuration
 
 In `config.json`  there is these configurations:
 
@@ -26,7 +26,7 @@ In `config.json`  there is these configurations:
 - `show_elapsed` : Default: true, shows elapsed time;
 - `show_heart` : Default: true, shows heart 💙 if detected that you own the track/album you're currently playing;
 
-## Installation & Setup:
+## Installation & Setup
 
 1. Install [NodeJS](https://nodejs.org/en/) if you don't have it already;
 2. Download code;
@@ -39,12 +39,12 @@ In `config.json`  there is these configurations:
 
 After that:
 
-1. In your browser, install the file `userscript.js` to a UserScript manager. Recommended: Tampermonkey (Download for [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo;), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/))
+1. In your browser, install the file `userscript.js` to a UserScript manager. Recommended: Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo;), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/))
 2. Tweak the `config.json` if you want **(optional)**
 3. (Windows) Run `run.bat` to start the main script;
 3. (Linux) Run `forever main.js` in the code folder;
 
-if this message is shown in the terminal: **"Bandcamp Rich Presence - Hooked!"** that means its ready and the window can be closed.\
+Given the message: **"Bandcamp Rich Presence - Hooked!"** that means its ready and the window can be closed.\
 Play some songs in Bandcamp and it should be working :)
 
 ### Restart/Stop
@@ -58,7 +58,7 @@ The script has been stopped. Start again using:
 4. (Windows) Run `run.bat` to start the main script;
 4. (Linux) Run `forever main.js` in the code folder.
 
-## Know issues:
+## Known issues:
 - It relies on a http://localhost POST signal to trade data between the `userscript` and the `main` script. It may not work if your internet is not configured to receive or can't receive those signals;\
 - Sometimes it can take up to 10 seconds to update or flick between the current and last song you were playing; (this is a discord-rpc issue)\
 - May crash whenever Discord closes or restarts (see 'Restart/Stop' section on how to restart the script)\
