@@ -30,12 +30,12 @@ In `config.json`  there is these configurations:
 
 1. Install [NodeJS](https://nodejs.org/en/) if you don't have it already;
 2. Download code;
-3. Open terminal
-4. Install forever using: `npm install forever`
+3. Open terminal;
+4. Install forever using: `npm install forever`;
 5. Open terminal in the code folder;
-6. Install Express using: `npm install express`
-7. Install CORS using: `npm install cors`
-8. Install discord-rpc using: `npm install discord-rpc`
+6. Install Express using: `npm install express`;
+7. Install CORS using: `npm install cors`;
+8. Install discord-rpc using: `npm install discord-rpc`;
 
 After that:
 
@@ -62,3 +62,4 @@ The script has been stopped. Start again using:
 - It relies on a http://localhost POST signal to trade data between the `userscript` and the `main` script. It may not work if your internet is not configured to receive or can't receive those signals;\
 - Sometimes it can take up to 10 seconds to update or flick between the current and last song you were playing; (this is a discord-rpc issue)\
 - May crash whenever Discord closes or restarts (see 'Restart/Stop' section on how to restart the script)\
+- May not show Rich Presence if the title of the song is too long or use too many or unsupported unicode characters\
