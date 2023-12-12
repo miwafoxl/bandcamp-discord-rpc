@@ -1,5 +1,5 @@
 const discord = require("discord-rpc");
-const clientId = "1002380451090010202";
+const clientId = "XXX"; // !IMPORTANT:  Insert your Application's ClientID here
 const rpc = new discord.Client({transport:'ipc'});
 const config = require("./config.json")
 var port = config.receive_port
