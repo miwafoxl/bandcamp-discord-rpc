@@ -41,7 +41,11 @@ after that:
 
 1. in your browser, install the file `userscript.js` to a userscript manager. recommended: Tampermonkey ([chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo;), [firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey), [opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/))
 2. tweak the `config.json` if you want **(optional)**
-3. (Windows) run `run.bat` to start the main script;
+3. before running the `run.bat`, you want to head over to [Discord Developer Portal](https://discord.com/developers/applications) and create a new application (or use an existing one);
+4. then in the **general information** section, copy/save your application id;
+5. now paste this into the `main.js` and edit the 2nd line `clientId = "XXX"`, replacing XXX with your application id;
+6. save the edits you've made and then follow the steps below according to your platform;
+7. (Windows) run `run.bat` to start the main script;
 3. (Linux) run `forever main.js` in the code folder;
 
 given the message: **"Bandcamp Rich Presence - Hooked!"** that means its ready and the window can be closed.\
