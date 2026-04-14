@@ -31,7 +31,7 @@ in `config.json`  there is these configurations:
 1. install [NodeJS](https://nodejs.org/en/) if you don't have it already;
 2. download code;
 3. open terminal;
-4. install forever using: `npm install forever`;
+4. install forever using: `npm install forever -g`;
 5. open terminal in the code folder;
 6. install Express using: `npm install express`;
 7. install CORS using: `npm install cors`;
@@ -41,7 +41,11 @@ after that:
 
 1. in your browser, install the file `userscript.js` to a userscript manager. recommended: Tampermonkey ([chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo;), [firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey), [opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/))
 2. tweak the `config.json` if you want **(optional)**
-3. (Windows) run `run.bat` to start the main script;
+3. before running the `run.bat`, you want to head over to [Discord Developer Portal](https://discord.com/developers/applications) and create a new application (named "Bandcamp" or "bandcamp");
+4. then in the **OAuth2** section, copy/save your client id;
+5. now paste this into the `main.js` and edit the 2nd line `clientId = "XXX"`, replacing XXX with your application id;
+6. save the edits you've made and then follow the steps below according to your platform;
+7. (Windows) run `run.bat` to start the main script;
 3. (Linux) run `forever main.js` in the code folder;
 
 given the message: **"Bandcamp Rich Presence - Hooked!"** that means its ready and the window can be closed.\
@@ -60,6 +64,8 @@ the script has been stopped. start again using:
 
 ## known issues:
 - it relies on a http://localhost POST signal to trade data between the `userscript` and the `main` script. it may not work if your internet is not configured to receive or can't receive those signals;
+- if it doesnt show up in your rich presence, you might have it turned off, or forgot to enter in the client id during the installation.
+- if it crashes with the error that the port in use, you might need to kill an old process via steps in the **restart/stop** section, or might need to use a different port.
 - sometimes it can take up to 10 seconds to update or flick between the current and last song you were playing; (this is a discord-rpc issue)
 - may crash whenever Discord closes or restarts (see 'restart/stop' section on how to restart the script)
 - may not show Rich Presence if the title of the song is too long or use too many or unsupported unicode characters
